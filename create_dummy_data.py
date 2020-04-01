@@ -57,11 +57,11 @@ def create_per_minute_dummy_readings(num_minutes):
    	return data
 
 
-data = create_per_minute_dummy_readings(10000)
-print(data)
+mydata = create_per_minute_dummy_readings(100000)
 
-with open("DummyData.json", "w") as f: 
-	json.dumps(data, f) 
+with open('DummyData_00.json', 'w') as outfile: 
+	json.dump(mydata, outfile) 
+	
 
 
 
