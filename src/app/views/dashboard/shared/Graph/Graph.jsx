@@ -76,7 +76,7 @@ export const Graph = (setAvgRps,setAvgSpo,setAvgPulse,setAvgTemp,setAvgBPlow,set
         SPO: ({style}) => {
             return (
                 <svg width="100%" >
-                        <path id="SPO2Line" className={style} strokeWidth="2px" fill="none" ></path>
+                        <path id="SPO2Line" className={style}  strokeWidth="2px" fill="none" ></path>
                 </svg>
             )
         },

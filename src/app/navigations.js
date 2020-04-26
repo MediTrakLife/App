@@ -6,7 +6,7 @@ export const navigations = [
     icon: "person",
   },
   {
-    name: "Physician",
+    name: "Physicians",
     path: "/physician",
     icon: "person_outline",
     auth: authRoles.fac,

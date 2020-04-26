@@ -141,6 +141,20 @@ function descendingComparator(a, b, orderBy) {
   return 0;
 }
 
+/* Custom function */
+
+function getIconColor(safetyi) {
+if(safetyi >= 0 && safetyi <= 3 )
+  return colorList[3];
+else if(safetyi > 3 && safetyi < 4 )
+return colorList[1]; 
+else if(safetyi >= 4 && safetyi <= 5 )
+return colorList[2]; 
+else
+return colorList[0]; 
+}
+/* Custom function */
+
 function getComparator(order, orderBy) {
   return order === "desc"
     ? (a, b) => descendingComparator(a, b, orderBy)
@@ -237,7 +251,7 @@ function EnhancedTableHead(props) {
 const TableCard = (props) => {
   const classes = useStyles();
   const [order, setOrder] = useState("asc");
-  const [orderBy, setOrderBy] = React.useState("name");
+  const [orderBy, setOrderBy] = React.useState("safetyIndex");
   const [rowsPerPage, setRowsPerPage] = useState(8);
   const [page, setPage] = useState(0);
 
@@ -319,7 +333,8 @@ const TableCard = (props) => {
                   <TableCell className="px-0" align="left" colSpan={1}>
                     <IconButton>
                       <NotificationsIcon
-                        className={`${colorList[Math.ceil(Math.random() * 3)]}`}
+                       className={getIconColor(product.safetyIndex)}
+                       // className={`${colorList[Math.ceil(Math.random() * 3)]}`}
                       />
                     </IconButton>
                   </TableCell>

@@ -78,24 +78,48 @@ const StatCards = ({ classes }) => {
           <div className="flex justify-between flex-grow mt-4 mx-10">
             <div className="flex flex-col items-start justify-center text-left mr-8">
               <small className="text-14 leading-loose font-medium text-left">
-                Wound Camera
+                Wound Camera <Tooltip title="View Details" placement="right">
+              <IconButton>
+                <Icon>more_horiz</Icon>
+              </IconButton>
+            </Tooltip>
               </small>
               <small className="text-14 leading-loose font-medium text-left">
-                Digital Stethoscope
+                Digital Stethoscope <Tooltip title="View Details" placement="right">
+              <IconButton>
+                <Icon>more_horiz</Icon>
+              </IconButton>
+            </Tooltip>
               </small>
               <small className="text-14 leading-loose font-medium text-left">
-                EKG
+                EKG <Tooltip title="View Details" placement="right">
+              <IconButton>
+                <Icon>more_horiz</Icon>
+              </IconButton>
+            </Tooltip>
               </small>
               <small className="text-14 leading-loose font-medium text-left">
-                Digital Otoscope
+                Digital Otoscope <Tooltip title="View Details" placement="right">
+              <IconButton>
+                <Icon>more_horiz</Icon>
+              </IconButton>
+            </Tooltip>
               </small>
+              <small className="text-14 leading-loose font-medium text-left">
               <Button
                 color="primary"
-                className="font-bold px-4"
-                style={{ backgroundColor: "rgba(0, 84, 254, 0.08)" }}
+                className="font-bold px-4 text-left"
+                style={{ backgroundColor: "rgba(0, 84, 254, 0.08)",marginLeft:"-15px" }}
               >
                 Vital Signs Monitor
               </Button>
+              <Tooltip  title="View Details" placement="right">
+              <IconButton>
+                <Icon>more_horiz</Icon>
+              </IconButton>
+            </Tooltip>
+            </small>
+      
             </div>
 
             <div className="flex flex-col items-center justify-center text-center">

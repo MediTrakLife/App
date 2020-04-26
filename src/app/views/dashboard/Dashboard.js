@@ -10,7 +10,7 @@ const tabList = [
   { label: "EHR Review", icon: "dashboard" },
   { label: "E-Perscribe", icon: "ballot" },
   { label: "Notes", icon: "note" },
-  { label: "Facility Details", icon: "" },
+ // { label: "Facility Details", icon: "" },
 ];
 const Dashboard = () => {
   const [tabValue, setTabValue] = useState(0);

@@ -4,6 +4,24 @@ import { makeStyles } from "@material-ui/styles";
 import { Graph } from "./Graph/Graph";
 
 const useStyles = makeStyles(theme => ({
+  
+  greenClr: {
+    color: "#A2F01E",
+    stroke: "#A2F01E"
+  },
+  lightBlueClr:{
+    color:"#78C6C6"
+  },
+  purpleLgClr:{
+    color:"#F01EE4"
+  },
+  redClr: {
+    color: "#F01E9A",
+    stroke: "#F01E9A"
+  },
+  sblueClr:{
+    color:"#3FD0C7"
+  },
   pinkBgClr: {
     backgroundColor: "#e31d93",
     stroke: "#e31d93"
@@ -29,10 +47,10 @@ const useStyles = makeStyles(theme => ({
     color: "#e31d1d"
   },
   orngBgClr: {
-    backgroundColor: "#fb873d"
+    backgroundColor: "red"
   },
   orngClr: {
-    color: "#fb873d"
+    color: "red"
   }
 }));
 
@@ -56,142 +74,153 @@ const TableCard = props => {
       <div className="p-2">
         <Grid container spacing={3}>
           {/* left line graph */}
-          <Grid item sm={9} className="p-0 ">
-            <Grid container spacing={0} className="pl-11 pr-2">
-              <Grid
+          <Grid item sm={1} className="p-0">
+            
+            <Grid container spacing={0}>
+            <Grid
                 item
                 sm={12}
-                className="border-dotted  border-t-2 flex flex-col justify-center items-center relative h-100 p-2 "
-
+                className="flex flex-col justify-center items-center relative h-100"
               >
-                <small className="p-3 font-bold absolute top-0 left-0">
-                  <Badge
-                    variant="dot"
-                    classes={{
-                      root: "mr-2",
-                      badge: classes.pinkBgClr
-                    }}
-                  />
-                           RESP
-                    </small>
-                <div className={`${classes.pinkClr} text-32 font-black`} style={{ height: "inherit", width: "100%" }} id="mainGrid">
-                  <RESP style={classes.pinkBgClr} >
-                  </RESP>
-                </div>
-              </Grid>
-              <Grid
-                item
-                sm={12}
-                className="border-dotted  border-t-2 flex flex-col justify-center items-center relative h-100 p-2 "
-              >
-                <small className="p-3 font-bold absolute top-0 left-0">
-                  <Badge
-                    variant="dot"
-                    classes={{
-                      root: "mr-2",
-                      badge: classes.purpleBgClr
-                    }}
-                  />
-                  SPO<sub>2</sub>
-                </small>
-                <div
-                  className={`${classes.purpleClr} text-32 font-black`}
-                  style={{ height: "inherit", width: "100%" }}
-                >
-                  <SPO style={classes.purpleClr} />
-                </div>
                 <small
-                  className={`p-3 font-bold absolute bottom-0 right-0 ${classes.purpleClr}`}
-                >
-                  %
+                className={`${classes.greenClr} p-3 font-bold`}>
+                  SPO2
                 </small>
               </Grid>
               <Grid
                 item
                 sm={12}
-                className="border-dotted border-t-2 flex flex-col justify-center items-center relative h-100 p-2 "
+                className="flex flex-col justify-center items-center relative h-100 p-2"
               >
-                <small className="p-3 font-bold absolute top-0 left-0">
-                  <Badge
-                    variant="dot"
-                    classes={{
-                      root: "mr-2",
-                      badge: classes.blueBgClr
-                    }}
-                  />
+                <small className={`${classes.sblueClr} p-3 font-bold`}>
                   PULSE
                 </small>
-                <div className={`${classes.blueClr} text-32 font-black`} style={{height:"inherit",width:"100%"}}>
-                  <PULSE style={classes.blueClr} />
-                </div>
-                <small
-                  className={`p-3 font-bold absolute bottom-0 right-0 ${classes.blueClr} `}
-                >
-                  BPM
-                </small>
               </Grid>
               <Grid
                 item
                 sm={12}
-                className="border-t-2 flex flex-col justify-center items-center relative h-100 p-2 "
+                className="flex flex-col justify-center items-center relative h-100 p-2"
               >
-                <small className="p-3 font-bold absolute top-0 left-0">
-                  <Badge
-                    variant="dot"
-                    classes={{
-                      root: "mr-2",
-                      badge: classes.orngBgClr
-                    }}
-                  />
+                <small className={`${classes.redClr} p-3 font-bold`}>
                   BP
-                </small>
-                <div className={`${classes.orngClr} text-32 font-black`}>
-                  {avgBPhigh}/{avgBPlow} {` (${avgHRM})`}
-                </div>
-                <small
-                  className={`p-3 font-bold absolute bottom-0 right-0 ${classes.redClr} `}
-                >
-                  &#8457;
                 </small>
               </Grid>
             </Grid>
           </Grid>
-          {/* Avg box  */}
-          <Grid item sm={3} className="border p-0">
-            <Grid container spacing={0}>
+          <Grid item sm={7} className="p-0 ">
+            <Grid container spacing={0} className="pl-11 pr-2">
               <Grid
+                item
+                sm={12}
+                className="flex flex-col justify-center items-center relative h-100 p-2 "
+              >
+                <div
+                  className={`${classes.greenClr} text-32 font-bold font-black`}
+                  style={{ height: "inherit", width: "100%" }}
+                >
+                  <SPO style={classes.greenClr} />
+                </div>
+              </Grid>
+              <Grid
+                item
+                sm={12}
+                className="flex flex-col justify-center items-center relative h-100 p-2 "
+              >
+                <div className={`${classes.blueClr} text-32 font-black`} style={{height:"inherit",width:"100%"}}>
+                  <PULSE style={classes.blueClr} />
+                </div>
+              </Grid>
+              <Grid
+                item
+                sm={12}
+                className="flex flex-col justify-center items-center relative h-100 p-2 "
+              >
+                <div className={`${classes.orngClr} text-32 font-black`}>
+                  {avgBPhigh}  /  {avgBPlow}
+                </div>
+              </Grid>
+            </Grid>
+          </Grid>
+          {/* Avg box  */}
+          <Grid item sm={2} className="p-0">
+            
+            <Grid container spacing={0}>
+            <Grid
+                item
+                sm={12}
+                className="flex flex-col justify-center items-center relative h-100"
+              >
+                <small style={{left:'18px'}} className={`${classes.greenClr} p-3 font-bold absolute top-0`}>
+                  SPO2
+                </small>
+                <div className={`${classes.greenClr} text-32 font-black`}>
+                  {avgSpo}
+                </div>
+              </Grid>
+              {/* <Grid
                 item
                 sm={12}
                 className="flex flex-col justify-center items-center relative h-100 border p-2"
               >
-                <small className="p-3 font-bold absolute top-0 left-0">
+                <small className="p-3 font-bold">
                   RR
                 </small>
                 <div className={`${classes.pinkClr} text-32 font-black`}>
                   {avgRps}
                 </div>
-                <small className={`p-3 font-bold absolute bottom-0 right-0 `}>
-                  RPS
+              </Grid>
+              */}
+              <Grid
+                item
+                sm={12}
+                className="flex flex-col justify-center items-center relative h-100  p-2"
+              >
+                <small style={{left:'18px'}} className={`${classes.lightBlueClr} p-3 absolute font-bold top-0`}>
+                  PULSE
                 </small>
+                <div className={`${classes.lightBlueClr} text-32 font-black`}>
+                  {avgPulse}
+                </div>
               </Grid>
               <Grid
                 item
                 sm={12}
-                className="flex flex-col justify-center items-center relative h-100 border p-2"
+                className="flex  flex-col justify-center items-center relative h-100  p-2"
               >
-                <small className="p-3 font-bold absolute top-0 left-0">
-                  SPO2
-                </small>
-                <div className={`${classes.purpleClr} text-32 font-black`}>
-                  {avgSpo}
+                <div className={`${classes.redClr} text-32 font-red font-bold`}>
+                {` (${avgHRM})`}
                 </div>
-                <small
-                  className={`p-3 font-bold absolute bottom-0 right-0 ${classes.purpleClr}`}
-                >
-                  %
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid item sm={2} className="p-0">
+            <Grid container spacing={0}>
+              <Grid
+                item
+                sm={12}
+                className="flex flex-col justify-center items-center relative h-100 p-2"
+              >
+                <small style={{left:'18px'}} className={`${classes.greenClr} p-3 font-bold absolute top-0`}>
+                  RR
                 </small>
+                <div className={`${classes.greenClr} text-32 font-black`}>
+                  {avgRps}
+                </div>
               </Grid>
               <Grid
+                item
+                sm={12}
+                className="flex  flex-col justify-center items-center relative h-100 p-2"
+              >
+                <small style={{left:'18px'}} className={`${classes.purpleLgClr} p-3 font-red absolute top-0 font-bold`}>
+                  TEMP
+                </small>
+                <div className={`${classes.purpleLgClr} text-32 font-red font-bold`}>
+                  {avgTemp}
+                </div>
+              </Grid>
+              {/* <Grid
                 item
                 sm={12}
                 className="flex flex-col justify-center items-center relative h-100 border p-2"
@@ -207,23 +236,16 @@ const TableCard = props => {
                 >
                   BPM
                 </small>
-              </Grid>
+              </Grid> */}
               <Grid
                 item
                 sm={12}
-                className="flex flex-col justify-center items-center relative h-100 border p-2"
+                className="flex  flex-col justify-center items-center relative h-100 p-2"
               >
-                <small className="p-3 font-bold absolute top-0 left-0">
-                  TEMP
-                </small>
-                <div className={`${classes.redClr} text-32 font-black`}>
-                  {avgTemp}
+                <div className={`${classes.redClr}  font-bold`}>
+                  <button className="font-bold border-2 text-left" style={{borderColor:'red',color:'red',padding:'5px'}}>READ</button>
                 </div>
-                <small
-                  className={`p-3 font-bold absolute bottom-0 right-0 ${classes.redClr} `}
-                >
-                  &#8457;
-                </small>
+         
               </Grid>
             </Grid>
           </Grid>
