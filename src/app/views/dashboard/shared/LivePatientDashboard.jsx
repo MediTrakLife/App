@@ -84,7 +84,7 @@ const TableCard = props => {
               >
                 <small
                 className={`${classes.greenClr} p-3 font-bold`}>
-                  SPO2
+                  Pleth
                 </small>
               </Grid>
               <Grid
@@ -93,7 +93,7 @@ const TableCard = props => {
                 className="flex flex-col justify-center items-center relative h-100 p-2"
               >
                 <small className={`${classes.sblueClr} p-3 font-bold`}>
-                  PULSE
+                Resp
                 </small>
               </Grid>
               <Grid
@@ -102,7 +102,8 @@ const TableCard = props => {
                 className="flex flex-col justify-center items-center relative h-100 p-2"
               >
                 <small className={`${classes.redClr} p-3 font-bold`}>
-                  BP
+                NPB
+                mmHg
                 </small>
               </Grid>
             </Grid>
@@ -176,7 +177,7 @@ const TableCard = props => {
                 className="flex flex-col justify-center items-center relative h-100  p-2"
               >
                 <small style={{left:'18px'}} className={`${classes.lightBlueClr} p-3 absolute font-bold top-0`}>
-                  PULSE
+                RR
                 </small>
                 <div className={`${classes.lightBlueClr} text-32 font-black`}>
                   {avgPulse}
@@ -202,7 +203,7 @@ const TableCard = props => {
                 className="flex flex-col justify-center items-center relative h-100 p-2"
               >
                 <small style={{left:'18px'}} className={`${classes.greenClr} p-3 font-bold absolute top-0`}>
-                  RR
+                  HR
                 </small>
                 <div className={`${classes.greenClr} text-32 font-black`}>
                   {avgRps}
@@ -214,7 +215,7 @@ const TableCard = props => {
                 className="flex  flex-col justify-center items-center relative h-100 p-2"
               >
                 <small style={{left:'18px'}} className={`${classes.purpleLgClr} p-3 font-red absolute top-0 font-bold`}>
-                  TEMP
+                  Temp
                 </small>
                 <div className={`${classes.purpleLgClr} text-32 font-red font-bold`}>
                   {avgTemp}
@@ -243,7 +244,7 @@ const TableCard = props => {
                 className="flex  flex-col justify-center items-center relative h-100 p-2"
               >
                 <div className={`${classes.redClr}  font-bold`}>
-                  <button className="font-bold border-2 text-left" style={{borderColor:'red',color:'red',padding:'5px'}}>READ</button>
+                  {/* <button className="font-bold border-2 text-left" style={{borderColor:'red',color:'red',padding:'5px'}}>READ</button> */}
                 </div>
          
               </Grid>
